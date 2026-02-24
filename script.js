@@ -1,3 +1,4 @@
+// Initial mock data simulating API response
 const initialJobs = [
     {
         id: 1,
@@ -81,6 +82,7 @@ const initialJobs = [
     }
 ];
 
+// Mutable application state
 let jobs = [...initialJobs];
 let currentTab = 'all';
 
