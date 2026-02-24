@@ -1,4 +1,5 @@
 // Initial mock data simulating API response
+console.log('Debug: script.js loaded - commit 3');
 const initialJobs = [
     {
         id: 1,
