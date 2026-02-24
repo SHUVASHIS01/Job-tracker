@@ -140,7 +140,17 @@ function renderJobs() {
                     </p>
                     
                     <div class="mb-4">
-                        <span class="inline-block bg-blue-50 text-blue-700 text-xs font-bold px-2 py-1 rounded">NOT APPLIED</span>
+                        <span class="inline-block text-xs font-bold px-2 py-1 rounded ${
+                            job.status === 'interview' ? 'bg-teal-50 text-teal-700' :
+                            job.status === 'rejected' ? 'bg-red-50 text-red-700' :
+                            'bg-blue-50 text-blue-700'
+                        }">
+                            ${
+                                job.status === 'interview' ? 'Interview' :
+                                job.status === 'rejected' ? 'Rejected' :
+                                'NOT APPLIED'
+                            }
+                        </span>
                     </div>
                     <p class="text-sm text-gray-600 line-clamp-2">${job.description}</p>
                     
