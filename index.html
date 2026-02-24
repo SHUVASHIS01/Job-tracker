@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,72 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-blue-50/50 min-h-screen font-sans text-gray-800">
 
-    <div id="app">
-        <!-- Dashboard structure will go here -->
+<body class="bg-[#f8fafc] min-h-screen font-sans text-gray-800">
+
+    <div id="app" class="max-w-5xl mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-[#0f172a]">Job Application Tracker</h1>
+        </header>
+
+        <!-- Stats Section -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Total</h2>
+                <p id="total-count" class="text-3xl font-bold text-[#0f172a]">8</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Interview</h2>
+                <p id="interview-count" class="text-3xl font-bold text-teal-500">0</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Rejected</h2>
+                <p id="rejected-count" class="text-3xl font-bold text-red-500">0</p>
+            </div>
+        </section>
+
+        <!-- Available Jobs Header -->
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold text-[#0f172a]">Available Jobs</h2>
+            <p class="text-sm font-medium text-gray-500"><span id="section-job-count">8</span> jobs</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex flex-wrap gap-2 mb-6" id="tabs-container">
+            <button
+                class="tab-btn active bg-blue-500 text-white px-6 py-2 rounded font-medium text-sm transition-colors shadow-sm"
+                data-tab="all">All</button>
+            <button
+                class="tab-btn bg-white hover:bg-gray-50 text-gray-600 px-6 py-2 rounded font-medium text-sm transition-colors shadow-sm border border-gray-200"
+                data-tab="interview">Interview</button>
+            <button
+                class="tab-btn bg-white hover:bg-gray-50 text-gray-600 px-6 py-2 rounded font-medium text-sm transition-colors shadow-sm border border-gray-200"
+                data-tab="rejected">Rejected</button>
+        </div>
+
+        <!-- Job Cards Container -->
+        <section id="jobs-container" class="space-y-4">
+            <!-- Job Cards will be injected here by JS -->
+        </section>
+
+        <!-- Empty State Container -->
+        <section id="empty-state" class="hidden flex-col items-center justify-center py-16 text-center">
+            <!-- Icon / illustration can go here -->
+            <div class="w-24 h-24 mb-6 text-gray-300">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M9 16h6v-2h-6v2zm3-14C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v-2h-2v2zm0-8h2v4h-2V6z" />
+                </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">No Jobs Available</h3>
+            <p class="text-gray-500 max-w-sm">There are no jobs currently matching this status. Keep applying!</p>
+        </section>
+
     </div>
 
+    <!-- UI Template for job card to store in JS -->
     <script src="script.js"></script>
 </body>
+
 </html>
