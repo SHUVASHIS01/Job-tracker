@@ -1,4 +1,3 @@
-// Initial mock data simulating API response
 console.log('Debug: script.js loaded - commit 3');
 const initialJobs = [
     {
@@ -83,11 +82,10 @@ const initialJobs = [
     }
 ];
 
-// Mutable application state
 let jobs = [...initialJobs];
 let currentTab = 'all';
 
-// DOM Elements
+
 const jobsContainer = document.getElementById('jobs-container');
 const emptyState = document.getElementById('empty-state');
 const sectionJobCount = document.getElementById('section-job-count');
@@ -115,7 +113,6 @@ function renderJobs() {
         filteredJobs = jobs.filter(job => job.status === currentTab);
     }
 
-    // Update section UI count
     sectionJobCount.textContent = filteredJobs.length;
 
     if (filteredJobs.length === 0) {
@@ -181,7 +178,7 @@ function updateDashboardCounts() {
     rejectedCountEl.textContent = rejected;
 }
 
-// Event Delegation for action buttons
+
 jobsContainer.addEventListener('click', (e) => {
     const deleteBtn = e.target.closest('.delete-btn');
     const interviewBtn = e.target.closest('.interview-btn');
@@ -208,12 +205,11 @@ jobsContainer.addEventListener('click', (e) => {
     }
 });
 
-// Tab Switching logic
 tabsContainer.addEventListener('click', (e) => {
     const tabBtn = e.target.closest('.tab-btn');
     if (!tabBtn) return;
 
-    // Update active state
+
     document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('bg-blue-500', 'text-white', 'active');
         btn.classList.add('bg-white', 'text-gray-600');
@@ -226,5 +222,5 @@ tabsContainer.addEventListener('click', (e) => {
     renderJobs();
 });
 
-// Initial Render
+
 renderJobs();
