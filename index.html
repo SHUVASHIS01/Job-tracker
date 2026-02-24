@@ -14,42 +14,42 @@
 
     <div id="app" class="max-w-5xl mx-auto px-4 py-8">
         <!-- Header -->
-        <header class="mb-8">
-            <h1 class="text-3xl font-bold text-[#0f172a]">Job Application Tracker</h1>
+        <header class="mb-6 md:mb-8 text-center md:text-left">
+            <h1 class="text-2xl md:text-3xl font-bold text-[#0f172a]">Job Application Tracker</h1>
         </header>
 
         <!-- Stats Section -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-                <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Total</h2>
-                <p id="total-count" class="text-3xl font-bold text-[#0f172a]">8</p>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10">
+            <div class="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                <h2 class="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Total</h2>
+                <p id="total-count" class="text-2xl md:text-3xl font-bold text-[#0f172a]">8</p>
             </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-                <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Interview</h2>
-                <p id="interview-count" class="text-3xl font-bold text-teal-500">0</p>
+            <div class="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                <h2 class="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Interview</h2>
+                <p id="interview-count" class="text-2xl md:text-3xl font-bold text-teal-500">0</p>
             </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-                <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Rejected</h2>
-                <p id="rejected-count" class="text-3xl font-bold text-red-500">0</p>
+            <div class="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                <h2 class="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Rejected</h2>
+                <p id="rejected-count" class="text-2xl md:text-3xl font-bold text-red-500">0</p>
             </div>
         </section>
 
         <!-- Available Jobs Header -->
-        <div class="flex justify-between items-center mb-4">
-            <h2 class="text-xl font-bold text-[#0f172a]">Available Jobs</h2>
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-4 gap-2">
+            <h2 class="text-xl md:text-2xl font-bold text-[#0f172a]">Available Jobs</h2>
             <p class="text-sm font-medium text-gray-500"><span id="section-job-count">8</span> jobs</p>
         </div>
 
         <!-- Tabs -->
-        <div class="flex flex-wrap gap-2 mb-6" id="tabs-container">
+        <div class="flex overflow-x-auto pb-2 mb-6 gap-2 w-full snap-x hide-scrollbar" id="tabs-container">
             <button
-                class="tab-btn active bg-blue-500 text-white px-6 py-2 rounded font-medium text-sm transition-colors shadow-sm"
+                class="tab-btn active bg-blue-500 text-white px-6 py-2 rounded font-medium text-sm transition-colors shadow-sm whitespace-nowrap snap-start"
                 data-tab="all">All</button>
             <button
-                class="tab-btn bg-white hover:bg-gray-50 text-gray-600 px-6 py-2 rounded font-medium text-sm transition-colors shadow-sm border border-gray-200"
+                class="tab-btn bg-white hover:bg-gray-50 text-gray-600 px-6 py-2 rounded font-medium text-sm transition-colors shadow-sm border border-gray-200 whitespace-nowrap snap-start"
                 data-tab="interview">Interview</button>
             <button
-                class="tab-btn bg-white hover:bg-gray-50 text-gray-600 px-6 py-2 rounded font-medium text-sm transition-colors shadow-sm border border-gray-200"
+                class="tab-btn bg-white hover:bg-gray-50 text-gray-600 px-6 py-2 rounded font-medium text-sm transition-colors shadow-sm border border-gray-200 whitespace-nowrap snap-start"
                 data-tab="rejected">Rejected</button>
         </div>
 
