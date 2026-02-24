@@ -90,3 +90,4 @@
 
 1. GitHub Repository Link: 
 2. Live Site Link: 
+> **Note:** This is the first commit documenting changes made to the repository.
